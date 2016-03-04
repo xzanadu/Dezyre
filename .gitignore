@@ -12,7 +12,6 @@
 # IntelliJ
 /out/
 
-pom.xml
 *.jar
 *.iml
 # mpeltonen/sbt-idea plugin
