@@ -4,6 +4,7 @@ import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Job;
+
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 
@@ -13,7 +14,6 @@ import java.io.IOException;
  * Created by Srinivas Bhagavathula on 2/29/16.
  */
 public class StockVolume {
-
 
     public static void main(String[] args) throws IOException, ClassNotFoundException, InterruptedException {
         if (args.length != 2) {
