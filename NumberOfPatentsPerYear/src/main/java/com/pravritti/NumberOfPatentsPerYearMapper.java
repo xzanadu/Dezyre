@@ -1,3 +1,5 @@
+package com.pravritti;
+
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
@@ -16,7 +18,7 @@ public class NumberOfPatentsPerYearMapper extends Mapper<LongWritable, Text, Int
 
         String[] valueArray = line.split(",");
 
-        if (!valueArray[0].equalsIgnoreCase("\"PATENTS\"")) {
+        if (!valueArray[0].equalsIgnoreCase("\"PATENT\"") ) {
             int year = Integer.parseInt(valueArray[1]);
             context.write(new IntWritable(year), new IntWritable(1));
         }

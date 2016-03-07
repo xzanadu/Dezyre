@@ -1,3 +1,5 @@
+package com.pravritti;
+
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.mapreduce.Job;
@@ -21,11 +23,13 @@ public class NumberOfPatentsPerYear {
         job.setJobName("NumberOfPatentsPerYear");
         job.setJarByClass(NumberOfPatentsPerYear.class);
 
-        FileInputFormat.addInputPath(job, new Path(args[0]));
+        FileInputFormat.setInputPaths(job, new Path(args[0]));
         FileOutputFormat.setOutputPath(job, new Path(args[1]));
 
         job.setMapperClass(NumberOfPatentsPerYearMapper.class);
+       // job.setCombinerClass(NumberOfPatentsPerYearReducer.class);
         job.setReducerClass(NumberOfPatentsPerYearReducer.class);
+
 
         job.setOutputKeyClass(IntWritable.class);
         job.setOutputValueClass(IntWritable.class);
