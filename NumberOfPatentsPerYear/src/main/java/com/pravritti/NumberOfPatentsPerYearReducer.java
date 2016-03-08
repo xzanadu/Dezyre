@@ -14,7 +14,7 @@ public class NumberOfPatentsPerYearReducer extends Reducer<IntWritable, IntWrita
     protected void reduce(IntWritable key, Iterable<IntWritable> values, Context context) throws IOException, InterruptedException {
         int sum = 0;
         for (IntWritable value: values) {
-            ++sum;
+            sum = sum + value.get();
         }
         context.write(key, new IntWritable(sum));
     }
