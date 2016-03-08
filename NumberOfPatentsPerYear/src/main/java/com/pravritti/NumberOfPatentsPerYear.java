@@ -27,7 +27,7 @@ public class NumberOfPatentsPerYear {
         FileOutputFormat.setOutputPath(job, new Path(args[1]));
 
         job.setMapperClass(NumberOfPatentsPerYearMapper.class);
-       // job.setCombinerClass(NumberOfPatentsPerYearReducer.class);
+        job.setCombinerClass(NumberOfPatentsPerYearReducer.class);
         job.setReducerClass(NumberOfPatentsPerYearReducer.class);
 
 
