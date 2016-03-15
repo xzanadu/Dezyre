@@ -22,5 +22,10 @@ public class NumberOfPatentsPerYearMapper extends Mapper<LongWritable, Text, Int
             int year = Integer.parseInt(valueArray[1]);
             context.write(new IntWritable(year), new IntWritable(1));
         }
+<<<<<<< HEAD
+
+
+=======
+>>>>>>> 2a4097d24808adf0558d87a985abb5e94240bf1d
     }
 }
