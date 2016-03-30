@@ -1,12 +1,3 @@
-         
-	 U.S. Patent Classes as of 31-DEC-1999	
-         -------------------------------------
-Source: USPTO
-
-Utility Classes
-
-Class	Title
------   -----
 001	** Classification Undetermined **
 002	Apparel
 004	Baths, Closets, Sinks, and Spittoons

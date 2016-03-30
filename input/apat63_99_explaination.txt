@@ -1,0 +1,71 @@
+      Pat63_99 File
+			   -------------
+Source: USPTO, and Jaffe and Trajtenberg computations.
+
+The Pat63_99 file includes all utility patents in the USPTO's TAF database granted 
+during the period 1963 to December 1999. Classification information reflects the U.S. 
+Patent Classification System as of  December 31, 1999.
+
+	No. of observations:          2,923,922
+     
+USPTO Original Variables:
+-------------------------
+Variable Name    Variable type    Characters     Contents
+       
+patent           numeric           7             Patent Number
+gyear            numeric	  12		 Grant Year
+gdate            numeric          12		 Grant Date 
+appyear          numeric	  12 		 Application Year
+country          character         3		 Country of First Inventor
+postate          charecter 	   3		 State of First Inventor (if US)
+assignee      	 numeric	  12		 Assignee Identifier (missing 1963-1967)
+asscode		 numeric	  12		 Assignee Type (see below)
+claims		 numeric	  12		 number of Claims
+nclass		 numeric	  12 		 Main Patent Class (3 digit) 
+
+New Variables:
+---------------------
+Variable Name    Variable type    Characters     Contents
+
+cat		 numeric	  12		 Technological Category
+subcat		 numeric	  12		 Technological Sub-Category
+cmade		 numeric	  12		 Number of Citations Made
+creceive         numeric	  12		 Number of Citations Received
+ratiocit	 numeric 	   6		 Percent of Citations Made to Patents Granted Since 1963
+general		 numeric	   6		 Measure of Generality
+original	 numeric	   6		 Measure of Originality
+fwdaplag	 numeric	   7		 Mean Forward Citation Lag
+bckgtlag	 numeric	   8		 Mean Backward Citation Lag
+selfctub	 numeric	   6		 Share of Self-Citations Made - Upper Bound
+selfctlb	 numeric	   6		 Share of Self-Citations Made - Lower Bound
+secdupbd	 numeric	   6		 Share of Self-Citations Received - Upper Bound
+secdlwbd	 numeric	   6		 Share of Self-Citations Received - Lower Bound
+
+The Pat63_99 file is sorted by ascending patent number.
+
+About The Variables:
+--------------------
+1. The State/Country Code is a three-character code. A list of corresponding state and country
+   names is included in the list_countries file. These codes are present for all patents in the file 
+   (1963-1999).
+2. The Assignee Identifier can be converted to the company name using the Coname file, 
+   Assignee Identifier is available for patents granted since 1969. 
+3. The Assignee type code is a one-character code having the following meaning:
+
+     1    = unassigned
+     2    = assigned to a U.S. nongovernment organization
+     3    = assigned to a non-U.S., nongovernment organization
+     4    = assigned to a U.S. individual
+     5    = assigned to a non-U.S. individual
+     6    = assigned to the U.S. (Federal) Government
+     7    = assigned to a non-U.S. government
+     8,9  = assigned to a U.S. non-Federal Government agency (do not appear in the dataset)
+                 
+4. The upper and lower bound for self-citations, together with the number of citations received,
+   allow to compute the number of citations received having an assignee identifier (same for 
+   citations made).
+5. The application year is available for patents granted since 1967.
+6. The number of claims is available for patents granted since 1975.
+7. Grant Date is the number of days elapsed since 1.1.1960.
+8. Main Patent Class list, as provided by the USPTO, is given in the attached Class file.
+
